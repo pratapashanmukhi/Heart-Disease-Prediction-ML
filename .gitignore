@@ -1,12 +1,30 @@
-﻿__pycache__/
+# Python bytecode & cache
+__pycache__/
 *.py[cod]
 *$py.class
 *.so
-.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Virtual Environments
 venv/
 .venv/
 env/
+ENV/
+
+# Secrets & Local Configurations
+.env
+.env.*
+
+# IDE & Editor files
 .idea/
 .vscode/
+*.swp
+*.swo
+
+# OS files & Logs
 *.log
-.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

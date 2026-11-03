@@ -1,180 +1,72 @@
-# ❤️ Heart Disease Prediction using Machine Learning
+﻿# Heart Disease Prediction — Machine Learning Diagnostic Pipeline
 
-## 📌 Project Overview
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.3+-F7931E.svg?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-This project focuses on predicting the presence of heart disease using Machine Learning algorithms. The objective is to analyze patient health data, identify important risk factors, and compare multiple classification models to determine the most effective approach for heart disease prediction.
-
-The project was developed as part of an AI & Machine Learning learning journey and demonstrates the complete Machine Learning workflow, including:
-
-- Data Loading
-- Data Exploration
-- Data Preprocessing
-- Model Training
-- Model Evaluation
-- Performance Comparison
-- Result Interpretation
+A supervised Machine Learning classification study evaluating cardiovascular patient telemetry to detect coronary heart disease risks early, comparing Logistic Regression, Random Forest, K-Nearest Neighbors, and Support Vector Classifiers.
 
 ---
 
-## 🎯 Objective
+## Clinical Dataset Attributes (`heart.csv`)
 
-The main goal of this project is to build a predictive model that can determine whether a patient is likely to have heart disease based on medical attributes.
-
-Machine Learning can assist healthcare professionals by providing data-driven insights and supporting early diagnosis.
-
----
-
-## 📊 Dataset Information
-
-The dataset contains various health-related attributes of patients, including:
-
-| Feature | Description |
-|-----------|-------------|
-| age | Age of patient |
-| sex | Gender |
-| cp | Chest pain type |
-| trestbps | Resting blood pressure |
-| chol | Cholesterol level |
-| fbs | Fasting blood sugar |
-| restecg | Resting ECG results |
-| thalach | Maximum heart rate achieved |
-| exang | Exercise induced angina |
-| oldpeak | ST depression |
-| slope | Slope of peak exercise ST segment |
-| ca | Number of major vessels |
-| thal | Thalassemia type |
-| target | Heart Disease Presence (0 = No, 1 = Yes) |
+| Attribute | Clinical Term | Description |
+| :--- | :--- | :--- |
+| **age** | Patient Age | Age in years |
+| **sex** | Gender | 1 = male; 0 = female |
+| **cp** | Chest Pain Type | 0: Typical Angina, 1: Atypical Angina, 2: Non-anginal, 3: Asymptomatic |
+| **trestbps** | Resting Blood Pressure | mm Hg on admission to the hospital |
+| **chol** | Serum Cholesterol | mg/dl |
+| **fbs** | Fasting Blood Sugar | > 120 mg/dl (1 = true; 0 = false) |
+| **restecg** | Resting ECG | 0: Normal, 1: ST-T wave abnormality, 2: Left ventricular hypertrophy |
+| **thalach** | Max Heart Rate | Maximum achieved heart rate during stress exercise |
+| **exang** | Exercise Angina | 1 = yes; 0 = no |
+| **oldpeak** | ST Depression | ST depression induced by exercise relative to rest |
+| **slope** | ST Slope | Slope of the peak exercise ST segment |
+| **ca** | Major Vessels | Number of major vessels (0–3) colored by flourosopy |
+| **thal** | Thalassemia | 1 = normal; 2 = fixed defect; 3 = reversable defect |
+| **target** | Diagnosis | 1 = Heart Disease Present; 0 = Heart Disease Absent |
 
 ---
 
-## 🛠 Technologies Used
+## Machine Learning Pipeline
 
-- Python
-- Google Colab
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-Learn
+1. **Exploratory Data Analysis (EDA)**: Statistical distribution analysis, box plots for outlier detection, and correlation heatmap generation.
+2. **Data Cleaning & Standardization**: Feature scaling via `StandardScaler` to prevent high-variance attributes (`chol`, `trestbps`) from skewing distance-based algorithms.
+3. **Cross-Validation & Model Training**: 5-Fold stratified cross-validation testing multiple classifiers.
+4. **Clinical Evaluation**: Metrics prioritized on **Sensitivity/Recall** to minimize dangerous false-negative clinical diagnoses.
 
 ---
 
-## 🤖 Machine Learning Models Used
+## Project Structure
 
-The following classification algorithms were implemented and compared:
-
-### 1️⃣ Logistic Regression
-
-A statistical model commonly used for binary classification problems.
-
-### 2️⃣ Decision Tree Classifier
-
-A tree-based model that makes decisions using feature-based rules.
-
-### 3️⃣ Random Forest Classifier
-
-An ensemble learning algorithm that combines multiple decision trees for improved prediction accuracy.
-
----
-
-## 📈 Model Evaluation
-
-The models were evaluated using:
-
-- Accuracy Score
-- Train-Test Split
-- Performance Comparison Chart
-
-The algorithm with the highest accuracy was selected as the best-performing model.
-
----
-
-## 📊 Visualizations
-
-The project includes:
-
-- Dataset Exploration
-- Correlation Analysis
-- Model Accuracy Comparison Bar Chart
-- Performance Evaluation Outputs
-
-These visualizations help understand the relationship between health indicators and heart disease prediction.
-
----
-
-## 🏆 Results
-
-After comparing multiple Machine Learning algorithms:
-
-- Logistic Regression was successfully trained and evaluated.
-- Decision Tree achieved strong predictive performance.
-- Random Forest provided robust classification results.
-- The best-performing model was selected based on accuracy.
-
-This demonstrates how Machine Learning can effectively support healthcare decision-making.
-
----
-
-## 📋 Final Conclusion
-
-- Three Machine Learning algorithms were compared.
-- Heart disease prediction can be effectively performed using patient health attributes.
-- Machine Learning models can assist healthcare professionals in identifying high-risk patients.
-- Model comparison helps determine the most reliable prediction technique.
-- Data-driven healthcare solutions can contribute to early diagnosis and improved patient outcomes.
-
----
-
-## 🚀 Run the Project
-
-### Google Colab Notebook
-
-https://colab.research.google.com/drive/1y5ofZN3mxXdizhp3x6WiG1JHNlarhvH9?usp=sharing
-
-### GitHub Repository
-
-https://github.com/pratapashanmukhi/Heart-Disease-Prediction-ML
-
----
-
-## 📂 Project Structure
-
-```text
+```
 Heart-Disease-Prediction-ML/
-│
-├── Heart_Disease_Prediction_ML.ipynb
-├── heart.csv
-├── README.md
-│
-└── Output Visualizations
+├── Heart_Disease_Prediction_ML.ipynb   # Complete analysis and training notebook
+├── heart.csv                           # Clinical patient dataset (303 records)
+├── requirements.txt                    # Python dependencies
+├── .gitignore                          # Exclusion rules
+└── README.md                           # Documentation
 ```
 
 ---
 
-## 📚 Learning Outcomes
+## Getting Started
 
-Through this project, the following concepts were practiced:
-
-- Data Analysis
-- Data Cleaning
-- Feature Understanding
-- Machine Learning Classification
-- Model Evaluation
-- Visualization Techniques
-- Healthcare Data Analytics
-
----
-
-## 👨‍💻 Author
-
-**Shanmukhi Pratapa**
-
-B.Tech CSE (AI & ML)
-
-VIT-AP University
-
-GitHub Profile:
-https://github.com/pratapashanmukhi
+```bash
+git clone https://github.com/pratapashanmukhi/Heart-Disease-Prediction-ML.git
+cd Heart-Disease-Prediction-ML
+python -m venv venv
+source venv/bin/activate  # or .\venv\Scripts\activate on Windows
+pip install -r requirements.txt
+jupyter notebook Heart_Disease_Prediction_ML.ipynb
+```
 
 ---
 
-## ⭐ If you found this project useful, consider giving it a star on GitHub.
+## Author
+
+**Shanmukhi Pratapa**  
+B.Tech CSE (AI & ML) — VIT-AP University  
+GitHub: [@pratapashanmukhi](https://github.com/pratapashanmukhi)
